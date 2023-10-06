@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .login-form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-form a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-form">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+            <a href="/forgot-password">Forgot password?</a>
+        </form>
+    </div>
+</body>
+
+<script>
+    document.querySelector('.login-form a').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  // Redirect the user to the forgot password page
+  window.location.href = '/forgot-password';
+});
+</script>
+
+</html>

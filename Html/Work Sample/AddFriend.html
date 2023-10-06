@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add friend Feature</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cornflowerblue;
+        }
+        #card{
+            border-radius: 10px;
+            height: 400px;
+            width: 300px;
+            background-color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+        #card img{
+            height: 60%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        #card h1{
+            font-size: 30px;
+            margin:10px 0;
+            font-weight: 800;
+        }
+        #card h5{
+            font-size: 25px;
+            color: red;
+            margin: 12px;
+        }
+        #card button{
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            margin: 5px;
+            cursor: grabbing;
+        }
+        #card #remove{
+            background-color: coral;
+            cursor:grab;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="card">
+        <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="">
+        <h1>Yash Gupta</h1>
+        <h5>Software Developer</h5>
+        <div class="btn-container">
+            <button id="remove">Remove</button>
+            <button id="add">Add friend</button>
+        </div>
+    </div>
+</body>
+<script>
+var isStatus = document.querySelector("h5")
+var addFriend = document.querySelector("#add")
+var removeFriend = document.querySelector("#remove")
+
+addFriend.addEventListener("click",function(){
+    isStatus.innerHTML = "Friends"
+    isStatus.style.color = "green";
+})
+
+removeFriend.addEventListener("click",function(){
+    isStatus.innerHTML = "Software Developer"
+    isStatus.style.color = "red";
+})
+</script>
+</html>

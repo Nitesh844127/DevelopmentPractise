@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload</title>
+</head>
+<body>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="Upload" />
+  </form>
+
+  <script>
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const dataURL = event.target.result;
+
+        const image = document.createElement('img');
+        image.src = dataURL;
+
+        document.body.appendChild(image);
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    document.querySelector('input[type="file"]').addEventListener('change', handleFileUpload);
+  </script>
+</body>
+</html>
